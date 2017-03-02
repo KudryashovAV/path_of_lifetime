@@ -1,0 +1,31 @@
+%h1{:style => "margin-top:50px;"}
+  Последняя статья
+.row
+  .col-md-8
+    .row
+      .col-md-12
+        %iframe{ frameborder: 0, height: 600, src: @article.video_link, width: "100%" } if article.video_link
+    .row
+      .col-md-12
+        = @article.body
+    .row
+      .col-md-3
+        = button_to "Редактировать статью", edit_article_path(@article.id), method: :get
+      .col-md-3
+        = button_to "Удалить статью", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }
+
+  .col-md-1
+  .col-md-3
+    .row
+      - @hstory.each do |article|
+        .row
+          = link_to article_path(article.id) do
+            .row
+              .col-md-8
+                = article.header
+            .row
+              .col-md-8
+                = article.created_at.strftime("%b %e, %l:%M %p")
+    .row
+      .col-md-12
+        = link_to "Все статьи", '#'

@@ -1,0 +1,13 @@
+%nav.navbar.navbar-default.navbar-fixed-top{:style => "height:50px;"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "Путь длиною в жизнь", root_path, { class: 'navbar-brand' }
+    .collapse.navbar-collapse
+      %div
+        %ul.nav.navbar-nav
+          = render 'navigation_links'
