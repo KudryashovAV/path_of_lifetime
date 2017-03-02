@@ -18,7 +18,6 @@ gem "uglifier"
 gem "haml-rails", "~> 0.9"
 gem "simple_form"
 gem "font-awesome-rails"
-gem "md_simple_editor"
 gem "kaminari"
 
 group :development do

@@ -3,8 +3,10 @@
 %br
 
 = simple_form_for @article do |f|
-  = md_simple_editor do
-    = f.input :header
-    = f.input :body, as: :text
-    = f.input :video_link
-    = f.submit
+  = f.input :header
+  = f.input :body, as: :text
+  = f.input :video_link
+  = f.submit
+
+:javascript
+  var simplemde = new SimpleMDE({ element: document.getElementById("article_body") });
